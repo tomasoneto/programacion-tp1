@@ -350,7 +350,7 @@ int opc3(nodo_telem_t *telemetria, nodo_pacientes_t *pacientes)
     nodo_telem_t *cursor = telemetria;
     FILE *f;
 
-    f = fopen("reporte.txt", "wb");
+    f = fopen("reporte.txt", "w");
 
     if (f == NULL)
     {
