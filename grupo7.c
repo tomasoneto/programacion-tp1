@@ -22,7 +22,7 @@ typedef struct telemetrias
 	unsigned char C;
 	}tele;
 
-int r,i,l,la,re, pax, tel,b,c,con,coi,aux,ce,x, promFC, promPAS, promPAD,promC,ca,z;
+int r,i,l,la,re, pax, tel,b,c,con,coi,aux,ce,x, promFC, promPAS, promPAD,promC,ca,z=1; //SE INICIALIZó Z
 char ap[16], np[32];
 unsigned int nhp;
 long sum;
@@ -82,7 +82,7 @@ fseek (t, 0,SEEK_END);
 
 l = ftell (t);
 
-fseek (t, -l , SEEK_END);
+fseek (t, -l , SEEK_END); 
 
 tel = (l/(sizeof (tele)));
 printf ("El archivo telemetria.bin contiene %d bytes de datos, %d registros\n",l,tel );
@@ -141,7 +141,7 @@ promC=sum/tel;
 
 //elijo que quiero hacer
 
-while (z!=0)
+while (z!=0) 
 	{
 	printf("Elija una de las siguientes opciones:\n\n1.Buscar un paciente y mostrar su informacion\n2.Mostrar valor promedio de todos los signos vitales\n3.Mostrar que pacientes se encuentran excedidos de temperatura\n0.Cerrar el programa\n");
 	scanf("%d", &z);
@@ -259,7 +259,7 @@ while (z!=0)
 			}	
 		}
 		
-	if (z==2)
+	else if (z==2)
 		{
 		//Muestro valores promedio
 		printf("El valor promedio para la FC es:%d\n",promFC);
@@ -268,7 +268,7 @@ while (z!=0)
 		printf("El valor promedio para la temperatura es:%d\n",promC);
 		}
 	
-	if (z==3)
+	else if (z==3)
 		{
 		//reporte
 
@@ -286,24 +286,19 @@ while (z!=0)
 			}
 		}
 		}
+	else if (z == 0) {
+        printf("Cerrando el programa...\n");
+	}	
 	else
-		{
-		if (z==0)
-			{
-			printf("Cerrando el programa...");
-			}
-		if (z!=0)
-			{
-			printf("opcion invalida");
-			}
-		}
+		printf("opcion invalida");
 	}
 
 	
 
 //Terminar programa
 	
-free (telem), (pac);
+free (telem); 
+free (pac); //CAMBIO free(telem), (pac); POR: free(telam); free(pac);
 
 printf("Programa terminado\n");
 
