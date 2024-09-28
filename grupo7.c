@@ -72,6 +72,7 @@ typedef struct telemetrias
 	 * - Seria conveniente utilizar nombres mas descriptivos para las variables.
 	 * - Los promedios podrian ser float, para tener mayor precision.
 	 * - Las variables de iteracion se pueden declarar en el lugar de cada bucle para mayor claridad.
+	 * - Se dene inicializar la variable z antes de utilizarla.
 	 * 
 	 */
 
