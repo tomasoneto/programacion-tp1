@@ -11,9 +11,6 @@ FILE *t,*p;
  * - Seria conveniente dividir el programa en funciones mas pequeñas, para facilitar la lectura y el mantenimiento del codigo.
  * - Seria conveniente agregar comentarios que expliquen que hace cada parte del codigo.
  * - Seria conveniente mantener la indentacion del codigo.
- * - Seria conveniente agregar un mensaje de error si no se puede abrir el archivo (validar)
- * - Seria conveniente agregar un mensaje de error si no se puede cerrar el archivo (validar)
- * - Seria conveniente agregar un mensaje de error si no se puede cargar los datos (validar)
  * 
  */
 
